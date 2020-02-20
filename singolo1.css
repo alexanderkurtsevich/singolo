@@ -132,3 +132,70 @@ body {
     padding-top: 46px;
     margin: 0 auto;
   }
+
+  .services {
+    background-color: #f2f2f2;
+    border-bottom: 6px #fff solid;
+    padding-top: 61px;
+    padding-bottom: 65px;
+  }
+  .services__heading {
+    font-family: "Lato-Black";
+    font-size: 30px;
+    color: #666d89;
+    margin: -2px 0 0 -2px;
+  }
+  .services__text {
+    font-family: "Lato-Light";
+    font-size: 18px;
+    color: #767e9e;
+    line-height: 31px;
+    text-align: justify;
+  }
+  .services__items-list {
+    height: 208px;
+    width: 940px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 46px;
+  }
+  .services__items-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .service-item {
+    width: 300px;
+    height: 85px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .service-item__image-border {
+    width: 59px;
+    height: 59px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #666d89;
+    border-radius: 50%;
+    box-sizing: border-box;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  .service-item__heading {
+    font-family: "Lato-Black";
+    font-size: 18px;
+    color: #666d89;
+    margin: -4px 0 0;
+  }
+  .service-item__text {
+    font-family: "Lato-Regular";
+    font-size: 12px;
+    color: #767e9e;
+    margin: 8px 0 0;
+    line-height: 22px;
+    text-align: justify;
+  }
+  
