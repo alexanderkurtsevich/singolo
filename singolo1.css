@@ -102,3 +102,33 @@ body {
   top: 1px;
   pointer-events: none;
 }
+
+.slider {
+    background-color: #f06c64;
+    height: 600px;
+    border-bottom: 6px solid #ea676b;
+    border-top: 6px solid transparent;
+    box-sizing: border-box;
+  }
+  .slider__container {
+    position: relative;
+  }
+  .slider__button {
+    cursor: pointer;
+    position: absolute;
+    top: 47%;
+    z-index: 9999;
+  }
+  .slider__button_right {
+    transform: rotate(180deg);
+    right: 4%;
+  }
+  
+  .slide1 {
+    width: 797px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 46px;
+    margin: 0 auto;
+  }
