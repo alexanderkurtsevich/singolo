@@ -10,38 +10,56 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="header" id="home">
         <div class="header__container container">
             <h1 class="header__logo logo">
                 <a href="#" class="logo__link">SINGOLO</a>
             </h1>
 
-            <nav class="header__menu menu">
+            <nav class="header__menu menu" id="header__menu">
                 <ul class="menu__list ">
-                    <li class="menu__item"><a class="menu__link" href="#">HOME</a></li>
-                    <li class="menu__item"><a class="menu__link" href="#">SERVICES</a></li>
-                    <li class="menu__item"><a class="menu__link" href="#">PORTFOLIO</a></li>
-                    <li class="menu__item"><a class="menu__link" href="#">ABOUT</a></li>
-                    <li class="menu__item"> <a class="menu__link" href="#">CONTACT</a></li>
+                    <li class="menu__item"><a data-menu="home" class="menu__link" href="#">HOME</a></li>
+                    <li class="menu__item"><a data-menu="services" class="menu__link" href="#">SERVICES</a></li>
+                    <li class="menu__item"><a data-menu="portfolio" class="menu__link" href="#">PORTFOLIO</a></li>
+                    <li class="menu__item"><a data-menu="about" class="menu__link" href="#">ABOUT</a></li>
+                    <li class="menu__item"> <a data-menu="contact" class="menu__link" href="#">CONTACT</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <section class="slider">
-        <div class="slider__container container">
+        <div class="slider__container container" id="slider-container">
             <img class="slider__button slider__button_left" src="./assets/pointer.png" alt="">
             <img class="slider__button slider__button_right" src="./assets/pointer.png" alt="">
+            <div class="slider__wrap">
+                <div class="slider__slide slide1">
+                    <div class="slide1__phone-wrapper"><img src="./assets/vertical-phone-image.png" alt=""
+                            class="slide1__vertical-phone-image">
+                        <div class="slide1__vertical-phone-button phone-button"></div>
+                        <div class="slide1__vertical-phone-black-screen black-screen"></div>
+                    </div>
 
-            <div class="slider__slide1 slide1">
-                <img src="./assets/vertical-phone-image.png" alt="" class="slide1__vertical-phone-image">
-                <img src="./assets/horizontal-phone-image.png" alt="" class="slide1__horizontal-phone-image">
+                    <div class="slide1__phone-wrapper">
+                        <img src="./assets/horizontal-phone-image.png" alt="" class="slide1__horizontal-phone-image">
+                        <div class="slide1__horizontal-phone-button phone-button"></div>
+                        <div class="slide1__horizontal-phone-black-screen black-screen"></div>
+                    </div>
 
+                </div>
+                <div class="slider__slide slide2">
+                    <div class="slide2__phone-wrapper">
+                        <img class="slide2__phone" src="./assets/phone-slide2.png" alt="">
+                        <div class="slide2__vertical-phone-button phone-button"></div>
+                        <div class="slide2__vertical-phone-black-screen black-screen"></div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="services">
+    <section class="services" id="services">
         <div class="services-container container">
             <h2 class="services__heading heading">Our Services</h2>
             <p class="services__text text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis
@@ -120,37 +138,37 @@
         </div>
     </section>
 
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio">
         <div class="portfolio-container container">
             <h2 class="portfolio__heading heading">Portfolio</h2>
             <p class="portfolio__text text">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget
                 lacinia odio sem nec elit.</p>
             <div class="portfolio__gallery gallery">
-                <div class="gallery__buttons">
+                <div class="gallery__buttons" id="gallery__buttons">
                     <button class="gallery__button gallery__button_first">All</button>
                     <button class="gallery__button gallery__button_second">Web Design</button>
                     <button class="gallery__button gallery__button_third">Graphic Design</button>
                     <button class="gallery__button gallery__button_fourth">Artwork</button>
                 </div>
-                <div class="gallery__items-list">
-                    <img src="./assets/project-1.png" alt="" class="gallery__item gallery__item_1">
-                    <img src="./assets/project-2.png" alt="" class="gallery__item gallery__item_2">
-                    <img src="./assets/project-3.png" alt="" class="gallery__item gallery__item_3">
-                    <img src="./assets/project-4.png" alt="" class="gallery__item gallery__item_4">
-                    <img src="./assets/project-5.png" alt="" class="gallery__item gallery__item_5">
-                    <img src="./assets/project-6.png" alt="" class="gallery__item gallery__item_6">
-                    <img src="./assets/project-7.png" alt="" class="gallery__item gallery__item_7">
-                    <img src="./assets/project-8.png" alt="" class="gallery__item gallery__item_8">
-                    <img src="./assets/project-9.png" alt="" class="gallery__item gallery__item_9">
-                    <img src="./assets/project-10.png" alt="" class="gallery__item gallery__item_10">
-                    <img src="./assets/project-11.png" alt="" class="gallery__item gallery__item_11">
-                    <img src="./assets/project-12.png" alt="" class="gallery__item gallery__item_12">
-                </div>
+                <ul class="gallery__items-list" id="gallery__items-list">
+                    <li><img src="./assets/project-1.png" alt="" class="gallery__item gallery__item_1"></li>
+                    <li><img src="./assets/project-2.png" alt="" class="gallery__item gallery__item_2"></li>
+                    <li><img src="./assets/project-3.png" alt="" class="gallery__item gallery__item_3"></li>
+                    <li><img src="./assets/project-4.png" alt="" class="gallery__item gallery__item_4"></li>
+                    <li><img src="./assets/project-5.png" alt="" class="gallery__item gallery__item_5"></li>
+                    <li><img src="./assets/project-6.png" alt="" class="gallery__item gallery__item_6"></li>
+                    <li><img src="./assets/project-7.png" alt="" class="gallery__item gallery__item_7"></li>
+                    <li><img src="./assets/project-8.png" alt="" class="gallery__item gallery__item_8"></li>
+                    <li><img src="./assets/project-9.png" alt="" class="gallery__item gallery__item_9"></li>
+                    <li><img src="./assets/project-10.png" alt="" class="gallery__item gallery__item_10"></li>
+                    <li><img src="./assets/project-11.png" alt="" class="gallery__item gallery__item_11"></li>
+                    <li><img src="./assets/project-12.png" alt="" class="gallery__item gallery__item_12"></li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <section class="about-us">
+    <section class="about-us" id="about">
         <div class="about-us-container container">
             <h2 class="about-us__heading heading">About Us</h2>
             <p class="about-us__text text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis
@@ -297,7 +315,7 @@
         </div>
     </section>
 
-    <section class="quote">
+    <section class="quote" id="contact">
         <div class="quote-container container">
             <h2 class="quote__heading heading">Get a Quote</h2>
             <p class="quote__text text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis,
@@ -307,13 +325,24 @@
             <div class="quote__wrap">
 
                 <form action="#" class="quote__form form">
+                    <div class="form__modal modal">
+                        <div class="modal__window">
+                            <h2 class="heading">Письмо отправлено</h2>
+                            <p class="modal__subject text">Тема:</p>
+                            <p class="modal__description text">Описание:</p>
+                            <button class="modal__button">OK</button>
+                        </div>
+                    </div>
                     <input class="form__input" type="text" name="name" placeholder="Name (Required)" autocomplete="off"
                         required>
+                    <span class="form__name-window text">Корректно заполните это поле.</span>
                     <input class="form__input" type="email" name="email" placeholder="Email (Required)"
                         autocomplete="off" required>
-                    <input class="form__input" type="text" name="subject" autocomplete="off" placeholder="Subject">
+                    <span class="form__mail-window text">Корректно заполните это поле</span>
+                    <input class="form__input" type="text" maxlength="85" name="subject" id="subject" autocomplete="off"
+                        placeholder="Subject">
                     <textarea class="form__input" name="description" placeholder="Describe your project in detail..."
-                        cols="30" rows="10" autocomplete="off"></textarea>
+                        cols="30" rows="10" maxlength="850" autocomplete="off"></textarea>
                     <button class="form__button" type="submit">SEND</button>
                 </form>
 
@@ -338,8 +367,8 @@
             <p class="footer__text text_small">© Copyright 2013</p>
             <ul class="footer__links-list">
 
-                <li><a class="footer__link" href="#"><svg xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 50 90" width="14" height="14" fill="#666d89">
+                <li><a class="footer__link" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 90"
+                            width="14" height="14" fill="#666d89">
                             <path
                                 d="M50,15.65H35.72c-1.69,0-3.58,2.22-3.58,5.19V31.15H50v14.7H32.14V90H15.29V45.85H0V31.15H15.29V22.5C15.29,10.09,23.9,0,35.72,0H50Z" />
                         </svg></a>
@@ -376,6 +405,8 @@
         </div>
     </footer>
 
+
+    <script src="./script.js"></script>
 </body>
 
 </html>
