@@ -1,16 +1,61 @@
 //HEADER
 
-const menuLinks = document.querySelectorAll('.menu__link');
+window.scrollBy(0, 1)
+
+const menuLinks = document.querySelectorAll('.menu__link'),
+    header = document.querySelector('.header');
+    let scrollingStatus = 'end';
 
 menuLinks.forEach(elem => {
     elem.addEventListener('click', (event) => {
         event.preventDefault();
+
         menuLinks.forEach(elem => {
             elem.classList.remove('menu__link_active')
+            headerMenu.classList.remove('header__menu_active');
+            burgerIcon.classList.remove('burger-icon-active')
         })
+
         event.target.classList.add('menu__link_active')
-        document.getElementById(event.target.getAttribute('data-menu')).scrollIntoView({ block: "start", behavior: "smooth" })
+
+        let elementTop = document.getElementById(event.target.getAttribute('data-menu')).getBoundingClientRect().top
+        let headerHeight = header.getBoundingClientRect().height;
+
+        if (event.target.getAttribute('data-menu') == 'home') {
+            window.scrollTo({ top: 0, behavior: "smooth" })
+        }
+        else {
+            window.scrollTo({ top: elementTop + pageYOffset - headerHeight, behavior: "smooth" });
+        }
+
     })
+})
+
+const sections = document.querySelectorAll('[data-section]');
+
+window.addEventListener('scroll', function () {
+    sections.forEach(function (elem) {
+        const menuElement = document.querySelector(`[data-menu=${elem.getAttribute('data-section')}]`);
+        let headerHeight = header.getBoundingClientRect().height;
+        if (elem.getBoundingClientRect().top <= headerHeight && elem.getBoundingClientRect().bottom > headerHeight) {
+            if (!menuElement.classList.contains('menu__link_active')) {
+                menuElement.classList.add('menu__link_active')
+            }
+        }
+        else {
+            menuElement.classList.remove('menu__link_active')
+        }
+    })
+})
+
+//MOBILE HEADER 
+
+let burgerIcon = document.querySelector('.burger-icon');
+let headerMenu = document.querySelector('.header__menu');
+
+burgerIcon.addEventListener('click', function () {
+    headerMenu.classList.toggle('header__menu_active');
+    burgerIcon.classList.toggle('burger-icon-active')
 })
 
 //GALLERY
@@ -24,10 +69,13 @@ galleryButtons.forEach(elem => elem.addEventListener('click', (event) => {
     galleryButtons.forEach(elem => {
         elem.classList.remove('gallery__button_active');
     })
+
     event.target.classList.add('gallery__button_active')
+
     galleryItemArray.sort(function () {
         return Math.random() - 0.5
     })
+
     for (i = 0; i < galleryItemArray.length; i++) {
         galleryList.append(galleryItemArray[i])
     }
@@ -46,52 +94,87 @@ const slider = document.querySelector('.slider'),
     buttonRigth = document.querySelector('.slider__button_right'),
     sliderWrap = document.querySelector('.slider__wrap'),
     slide = document.querySelectorAll('.slider__slide');
-let lastTurn = 'left'
+
+let lastTurn = 'left';
+let statusTurn = 'end';
 
 buttonLeft.addEventListener('click', event => {
-    if (lastTurn == 'left') {
-        sliderWrap.prepend(sliderWrap.lastElementChild);
-        slide.forEach(elem => {
-            elem.style.transition = "none"
-            elem.style.left = "-797px";
-        })
-        setTimeout(() => {
+    if (statusTurn == 'end') {
+        if (lastTurn == 'left') {
+            sliderWrap.prepend(sliderWrap.lastElementChild);
             slide.forEach(elem => {
-                elem.style.transition = "0.55s"
-                elem.style.left = "0";
+                elem.style.transition = "none"
+                elem.style.left = `-${document.querySelector('.slider__wrap').offsetWidth}px`;
             })
-        }, 100);
+            //Promise for blocking fast turning
+            new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    slide.forEach(elem => {
+                        elem.style.transition = "0.55s"
+                        elem.style.left = "0";
+                        statusTurn = 'turning';
+                        resolve();
+                    })
+                }, 100)
+            }).then(setTimeout(() => {
+                statusTurn = 'end'
+            }, 550))
+        }
+        else {
+            //Promise for blocking fast turning
+            new Promise((resolve, reject) => {
+                slide.forEach(elem => {
+                    elem.style.left = "0";
+                    statusTurn = 'turning';
+                    resolve();
+                })
+            }).then(setTimeout(() => {
+                statusTurn = 'end'
+            }, 550));
+
+        }
+        slider.classList.toggle('slider__bg-toggle')
+        lastTurn = 'left'
     }
-    else {
-        slide.forEach(elem => {
-            elem.style.left = "0";
-        })
-    }
-    slider.classList.toggle('slider__bg-toggle')
-    lastTurn = 'left'
 })
 
 buttonRigth.addEventListener('click', event => {
-    if (lastTurn == 'right') {
-        sliderWrap.append(sliderWrap.firstElementChild);
-        slide.forEach(elem => {
-            elem.style.transition = "none"
-            elem.style.left = "0";
-        })
-        setTimeout(() => {
+    if (statusTurn == 'end') {
+        if (lastTurn == 'right') {
+            sliderWrap.append(sliderWrap.firstElementChild);
             slide.forEach(elem => {
-                elem.style.transition = "0.55s"
-                elem.style.left = "-797px";
+                elem.style.transition = "none"
+                elem.style.left = "0";
             })
-        }, 100);
+            //Promise for blocking fast turning
+            new Promise((resolve, reject) => setTimeout(() => {
+                slide.forEach(elem => {
+                    elem.style.transition = "0.55s"
+                    elem.style.left = `-${document.querySelector('.slider__wrap').offsetWidth}px`;
+                    statusTurn = 'turning';
+                    resolve();
+                })
+            }, 100)).then(setTimeout(() => {
+                statusTurn = 'end'
+            }, 550));
+        }
+        else {
+            slide.forEach(elem => {
+                //Promise for blocking fast turning
+                new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        elem.style.left = `-${document.querySelector('.slider__wrap').offsetWidth}px`;
+                        statusTurn = 'turning';
+                        resolve();
+                    }, 100)
+                }).then(setTimeout(() => {
+                    statusTurn = 'end'
+                }, 550));
+            })
+        }
+        slider.classList.toggle('slider__bg-toggle')
+        lastTurn = 'right'
     }
-    else {
-        slide.forEach(elem => {
-            elem.style.left = "-797px";
-        })
-    }
-    slider.classList.toggle('slider__bg-toggle')
-    lastTurn = 'right'
 })
 
 //SLIDER SCREEN

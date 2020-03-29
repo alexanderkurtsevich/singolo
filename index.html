@@ -10,8 +10,13 @@
 </head>
 
 <body>
-    <header class="header" id="home">
+    <header class="header" data-section="home" id="home">
         <div class="header__container container">
+            <div class="burger-icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
             <h1 class="header__logo logo">
                 <a href="#" class="logo__link">SINGOLO</a>
             </h1>
@@ -28,7 +33,7 @@
         </div>
     </header>
 
-    <section class="slider">
+    <section class="slider" data-section="home">
         <div class="slider__container container" id="slider-container">
             <img class="slider__button slider__button_left" src="./assets/pointer.png" alt="">
             <img class="slider__button slider__button_right" src="./assets/pointer.png" alt="">
@@ -59,7 +64,7 @@
         </div>
     </section>
 
-    <section class="services" id="services">
+    <section class="services" id="services" data-section="services">
         <div class="services-container container">
             <h2 class="services__heading heading">Our Services</h2>
             <p class="services__text text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis
@@ -69,76 +74,75 @@
 
             <div class="services__items-list">
 
-                <div class="services__items-column services__items-column_first">
-                    <div class="service-item">
-                        <div class="service-item__image-border">
-                            <img src="./assets/pen.svg" alt="">
-                        </div>
-                        <h3 class="service-item__heading heading_small">Custom Design</h3>
-                        <p class="service-item__text text_small">Curabitur vestibulum eget mauris quis laoreet.
-                            Phasellus in quam
-                            laoreet, viverra lacus ut, ultrices velit.</p>
+
+                <div class="service-item">
+                    <div class="service-item__image-border">
+                        <img src="./assets/pen.svg" alt="">
                     </div>
-                    <div class="service-item">
-                        <div class="service-item__image-border">
-                            <img src="./assets/phone.svg" alt="">
-                        </div>
-                        <h3 class="service-item__heading heading_small">Responsive Layout</h3>
-                        <p class="service-item__text text_small">Sed porttitor placerat rhoncus. In at nunc tellus.
-                            Maecenas
-                            blandit
-                            nunc ligula. Prae-sent elit leo.</p>
-                    </div>
+                    <h3 class="service-item__heading heading_small">Custom Design</h3>
+                    <p class="service-item__text text_small">Curabitur vestibulum eget mauris quis laoreet.
+                        Phasellus in quam
+                        laoreet, viverra lacus ut, ultrices velit.</p>
                 </div>
 
-                <div class="services__items-column services__items-column_second">
-                    <div class="service-item">
-                        <div class="service-item__image-border">
-                            <img src="./assets/bulb.svg" alt="">
-                        </div>
-                        <h3 class="service-item__heading heading_small">Inovative Ideas</h3>
-                        <p class="service-item__text text_small">Quisque luctus, quam eget molestie com-modo, lacus
-                            purus cursus
-                            purus,
-                            nec rutrum tellus dolor id lorem.</p>
+                <div class="service-item">
+                    <div class="service-item__image-border">
+                        <img src="./assets/bulb.svg" alt="">
                     </div>
-                    <div class="service-item">
-                        <div class="service-item__image-border">
-                            <img src="./assets/bubble.svg" alt="">
-                        </div>
-                        <h3 class="service-item__heading heading_small">24 / 7 Support</h3>
-                        <p class="service-item__text text_small">Vivamus vel quam lacinia, tincidunt dui non, vehicula
-                            nisi. Nulla
-                            a sem erat. Pellen-tesque egestas venenatis lorem .</p>
-                    </div>
+                    <h3 class="service-item__heading heading_small">Inovative Ideas</h3>
+                    <p class="service-item__text text_small">Quisque luctus, quam eget molestie com-modo, lacus
+                        purus cursus
+                        purus,
+                        nec rutrum tellus dolor id lorem.</p>
                 </div>
 
-                <div class="services__items-column services__items-column_third">
-                    <div class="service-item">
-                        <div class="service-item__image-border">
-                            <img src="./assets/heart.svg" alt="">
-                        </div>
-                        <h3 class="service-item__heading heading_small">Love Is The Answer</h3>
-                        <p class="service-item__text text_small">Nulla sed nunc et tortor luctus faucibus. Morbi at
-                            aliquet turpis,
-                            et
-                            consequat felis. Quisque condimentum.</p>
+                <div class="service-item">
+                    <div class="service-item__image-border">
+                        <img src="./assets/heart.svg" alt="">
                     </div>
-                    <div class="service-item">
-                        <div class="service-item__image-border">
-                            <img src="./assets/star.svg" alt="">
-                        </div>
-                        <h3 class="service-item__heading heading_small">Feel Like A Star</h3>
-                        <p class="service-item__text text_small">Quisque hendrerit purus dapibus, ornare nibh vitae,
-                            viverra nibh.
-                            Fusce vitae aliquam tellus.</p>
-                    </div>
+                    <h3 class="service-item__heading heading_small">Love Is The Answer</h3>
+                    <p class="service-item__text text_small">Nulla sed nunc et tortor luctus faucibus. Morbi at
+                        aliquet turpis,
+                        et
+                        consequat felis. Quisque condimentum.</p>
                 </div>
+
+                <div class="service-item">
+                    <div class="service-item__image-border">
+                        <img src="./assets/phone.svg" alt="">
+                    </div>
+                    <h3 class="service-item__heading heading_small">Responsive Layout</h3>
+                    <p class="service-item__text text_small">Sed porttitor placerat rhoncus. In at nunc tellus.
+                        Maecenas
+                        blandit
+                        nunc ligula. Prae-sent elit leo.</p>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-item__image-border">
+                        <img src="./assets/bubble.svg" alt="">
+                    </div>
+                    <h3 class="service-item__heading heading_small">24 / 7 Support</h3>
+                    <p class="service-item__text text_small">Vivamus vel quam lacinia, tincidunt dui non, vehicula
+                        nisi. Nulla
+                        a sem erat. Pellen-tesque egestas venenatis lorem .</p>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-item__image-border">
+                        <img src="./assets/star.svg" alt="">
+                    </div>
+                    <h3 class="service-item__heading heading_small">Feel Like A Star</h3>
+                    <p class="service-item__text text_small">Quisque hendrerit purus dapibus, ornare nibh vitae,
+                        viverra nibh.
+                        Fusce vitae aliquam tellus.</p>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <section class="portfolio" id="portfolio">
+    <section class="portfolio" id="portfolio" data-section="portfolio">
         <div class="portfolio-container container">
             <h2 class="portfolio__heading heading">Portfolio</h2>
             <p class="portfolio__text text">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget
@@ -168,7 +172,7 @@
         </div>
     </section>
 
-    <section class="about-us" id="about">
+    <section class="about-us" id="about" data-section="about">
         <div class="about-us-container container">
             <h2 class="about-us__heading heading">About Us</h2>
             <p class="about-us__text text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis
@@ -315,7 +319,7 @@
         </div>
     </section>
 
-    <section class="quote" id="contact">
+    <section class="quote" id="contact" data-section="contact">
         <div class="quote-container container">
             <h2 class="quote__heading heading">Get a Quote</h2>
             <p class="quote__text text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis,
@@ -349,7 +353,7 @@
                 <div class="quote__contact-info contact-info">
                     <h3 class="contact-info__heading heading_small">Contact Information</h3>
                     <p class="contact-info__text text_small">Quisque hendrerit purus dapibus, ornare nibh vitae,
-                        viver-ra
+                        viverra
                         nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor
                         luctus faucibus. Morbi at aliquet turpis, et consequat felis. </p>
                     <p class="contact-info__place text_small">Elm St. 14/05 Lost City</p>
